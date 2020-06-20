@@ -1,0 +1,5 @@
+virtual environment name- django_project
+app name- my_firstapp
+user name- himadri
+pw-Htsid123
+project name- website_show

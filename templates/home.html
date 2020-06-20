@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style_home.css' %}">
+    <title>Todo</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+    <form action="/add_todo/", method= "POST">
+        {% csrf_token %}
+  
+        <!--  Model variable and variable inside pOST of view  should be same aslo the text fied name should beb same-->
+        <input type="text" id="fname"  placeholder="Enter task" name="text_var">
+       
+        <input class= "add_button_color"  type="submit" value="Add Todo Item">
+        
+        
+      </form>
+{% for task in all_content %}
+<ul>
+    <li>{{task}}</li>
+    <form action="/delete_todo/{{task.id}}/", method= "POST">
+        {% csrf_token %}
+  
+        <!--  Model variable and variable inside pOST of view  should be same aslo the text fied name should beb same-->
+        <input class= "delete_button_color" type="submit" value="Delete">
+        
+      </form>
+    
+    
+</ul>
+      
+{% endfor %}
+
+<p>CopyRight, HimmId {% now "Y"%}</p>
+</body>
+</html>

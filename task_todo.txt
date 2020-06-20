@@ -1,0 +1,3 @@
+1) Show the actual task to the user
+2) Allow user to add/delete new task
+3) Style the website page
